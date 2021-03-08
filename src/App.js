@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Tweet from './Tweet'
-/*
+import Tweet from './Tweet';
+
+
+  /*
 function App(){
 
   const [users, setUsers] = useState([
@@ -8,7 +10,7 @@ function App(){
     {name:"anind", msg: "i'm fat"},
     {name: "mmk", msg: "no couches allowed" }
   ]);
-  /*
+
   const [isRed, setRed] = useState(false);
   const [count, setCount] = useState(0);
   const increment = () => {
@@ -18,36 +20,38 @@ function App(){
     setRed(!isRed); */
 
 
-
+/*
       /* FETCH DATA FROM JSON FILE */
-  const gitHubUrl = "https://cors-anywhere.herokuapp.com/https://testflask122.herokuapp.com/api/cases/totalcases";
+  const Url = "http://127.0.0.1:5000/api/cases/totalcases";
 
   function App() {
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState([]);
   
     useEffect(() => {
-      getGitHubUserWithFetch();
+      getDataWithFetch();
     }, []);
   
-    const getGitHubUserWithFetch = async () => {
-      const response = await fetch(gitHubUrl);
-      const jsonData = await response.json();
-      setUserData(jsonData);
+    const getDataWithFetch = async () => {
+      const response = await fetch(Url);
+      const json = await response.json();
+      setUserData(json);
+      console.log("result =", json);
     };
-  
-    
-  
+
     return (
       <div className="App">
         <header className="App-header">
-          <h2>GitHub User Data</h2>
+          <h2>Total COVID19 Cases in Cebu </h2>
         </header>
         <div className="user-container">
-          <h5 className="info-item">{userData.total}</h5>
+          <h2>
+          {userData.map(user => <div>{user.total}</div>)}
+          </h2>
         </div>
+        
       </div>
     );
-  
+
   
     
 /*
