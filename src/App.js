@@ -20,7 +20,7 @@ function App(){
 
 
       /* FETCH DATA FROM JSON FILE */
-  const gitHubUrl = "https://testflask122.herokuapp.com/api/cases/totalcases";
+  const gitHubUrl = "https://cors-anywhere.herokuapp.com/https://testflask122.herokuapp.com/api/cases/totalcases";
 
   function App() {
     const [userData, setUserData] = useState({});
