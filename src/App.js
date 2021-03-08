@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Tweet from './Tweet'
-
+/*
 function App(){
 
   const [users, setUsers] = useState([
@@ -19,7 +19,38 @@ function App(){
 
 
 
+      /* FETCH DATA FROM JSON FILE */
+  const gitHubUrl = "https://testflask122.herokuapp.com/api/cases/totalcases";
 
+  function App() {
+    const [userData, setUserData] = useState({});
+  
+    useEffect(() => {
+      getGitHubUserWithFetch();
+    }, []);
+  
+    const getGitHubUserWithFetch = async () => {
+      const response = await fetch(gitHubUrl);
+      const jsonData = await response.json();
+      setUserData(jsonData);
+    };
+  
+    
+  
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h2>GitHub User Data</h2>
+        </header>
+        <div className="user-container">
+          <h5 className="info-item">{userData.total}</h5>
+        </div>
+      </div>
+    );
+  
+  
+    
+/*
   return(
     <div className="app">
       {users.map(user => (
@@ -37,5 +68,7 @@ function App(){
   );//"jsx"; "?... :..." if-then 
 }
 */
+
+
 }
 export default App;
