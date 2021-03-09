@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-  const Url = "http://testflask122.herokuapp.com/api/cases/totalcases";
+  const Url = "https://testflask122.herokuapp.com/api/cases/totalcases";
 
   function App() {
     const [userData, setUserData] = useState([]);
