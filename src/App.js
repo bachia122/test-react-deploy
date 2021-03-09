@@ -1,28 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Tweet from './Tweet';
+import './App.css';
 
-
-  /*
-function App(){
-
-  const [users, setUsers] = useState([
-    {name:"bern", msg: "sup"},
-    {name:"anind", msg: "i'm fat"},
-    {name: "mmk", msg: "no couches allowed" }
-  ]);
-
-  const [isRed, setRed] = useState(false);
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    setCount(count+2);
-    //setRed(true);
-    //"!" to opposite value
-    setRed(!isRed); */
-
-
-/*
-      /* FETCH DATA FROM JSON FILE */
-  const Url = "http://127.0.0.1:5000/api/cases/totalcases";
+  const Url = "http://testflask122.herokuapp.com/api/cases/totalcases";
 
   function App() {
     const [userData, setUserData] = useState([]);
@@ -39,11 +18,11 @@ function App(){
     };
 
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="app">
+    
           <h2>Total COVID19 Cases in Cebu </h2>
-        </header>
-        <div className="user-container">
+     
+        <div className="tweet">
           <h2>
           {userData.map(user => <div>{user.total}</div>)}
           </h2>
@@ -52,26 +31,6 @@ function App(){
       </div>
     );
 
-  
-    
-/*
-  return(
-    <div className="app">
-      {users.map(user => (
-        <Tweet name = {user.name} msg={user.msg} />
-      ))}
-    </div>
-  );
-/*  return(
-    <div className="app"> 
-    
-     <h2 className={isRed ? 'red' : ''}> change my color </h2>
-      <button onClick={increment}>INcrement</button>
-      <h1>{count}</h1> -->
-    </div>
-  );//"jsx"; "?... :..." if-then 
-}
-*/
 
 
 }
