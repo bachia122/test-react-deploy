@@ -21,8 +21,8 @@ import './App.css';
     return (
 
       <div className="app">
-              <h2>Cumulative COVID19 Cases in Cebu</h2>
-              <h3>as of </h3>
+              <h2>Cebu COVID19 Tracker</h2>
+               <p><h3>as of /date/ </h3></p>
         <div className="section">Total Cases
         {caseCounts.map(count => <div>{count.total}</div>)}</div>
         <div className="section"> Active Cases
