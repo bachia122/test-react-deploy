@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 
-function Tweet({name, msg}){
+function Section({name, total}){
     return(
-        <div className="tweet">
+        <div className="section">
             <h3>{name}</h3>
-            <p>{msg}</p>
-            <h3>Number of likes</h3>
+            <h3>{total}</h3>
         </div>
     )
 }
 
-export default Tweet;
+export default Section;

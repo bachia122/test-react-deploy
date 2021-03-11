@@ -2,23 +2,18 @@
   min-height: 100vh;
   background: lightblue;
   display: flex;
-
   justify-content: space-around;
   align-items: center;
 }
 
-.tweet{
-  height: 300px;
-  width: 300px;
+.section{
+  height: 100px;
+  width: 200px;
+  font-size: 20px;
   background: white;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-/* "class" */
-.red{
-  color: red;
-  font-size: 50px;
 }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Section from "./Section";
 import './App.css';
 
-  const Url = "https://testflask122.herokuapp.com/api/cases/totalcases";
+  const Url = "https://testflask122.herokuapp.com/api/cases/totals";
 
   function App() {
-    const [userData, setUserData] = useState([]);
+    const [caseCounts, setCaseCounts] = useState([]);
   
     useEffect(() => {
       getDataWithFetch();
@@ -13,21 +14,23 @@ import './App.css';
     const getDataWithFetch = async () => {
       const response = await fetch(Url);
       const json = await response.json();
-      setUserData(json);
+      setCaseCounts(json);
       console.log("result =", json);
     };
 
     return (
+
       <div className="app">
-    
-          <h2>Total COVID19 Cases in Cebu </h2>
-     
-        <div className="tweet">
-          <h2>
-          {userData.map(user => <div>{user.total}</div>)}
-          </h2>
-        </div>
-        
+              <h2>Cumulative COVID19 Cases in Cebu</h2>
+              <h3>as of </h3>
+        <div className="section">Total Cases
+        {caseCounts.map(count => <div>{count.total}</div>)}</div>
+        <div className="section"> Active Cases
+        {caseCounts.map(count => <div>{count.active}</div>)} </div>
+        <div className="section"> Recoveries
+        {caseCounts.map(count => <div>{count.recoveries}</div>)} </div>
+        <div className="section">  Deaths
+        {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
       </div>
     );
 
