@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Section from "./Section";
+import BarChart from './components/BarChart';
+import Section from "./components/Section";
 import './App.css';
+import './index.css';
 
   const Url = "https://testflask122.herokuapp.com/api/cases/totals";
 
@@ -31,7 +33,11 @@ import './App.css';
         {caseCounts.map(count => <div>{count.recoveries}</div>)} </div>
         <div className="section">  Deaths
         {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
+      <div>
+        <BarChart />
       </div>
+      </div>
+     
     );
 
 
