@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from './components/BarChart';
-import Section from "./components/Section";
 import './App.css';
 import './index.css';
 
@@ -24,7 +23,7 @@ import './index.css';
 
       <div className="app">
               <h2>Cebu COVID19 Tracker</h2>
-               <p><h3>as of /date/ </h3></p>
+               <h3>as of /date/ </h3>
         <div className="section">Total Cases
         {caseCounts.map(count => <div>{count.total}</div>)}</div>
         <div className="section"> Active Cases

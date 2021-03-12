@@ -5,76 +5,68 @@ import axios from 'axios'
 const BarChart = () => {
 
   const [chartData, setChartData] = useState([]);
-  const [dateData, setDateData] = useState([]);
-  const [caseData, setCaseData] = useState([]);
+
 
   const getChartData = () => {
+    let newURL = 'https://testflask122.herokuapp.com/api/charts?status=NEW';
+    let recovURL = 'https://testflask122.herokuapp.com/api/charts?status=RECOV';
+    let diedURL = 'https://testflask122.herokuapp.com/api/charts?status=DIED';
     let dates = [];
     let casesNew = [];
     let casesDied = [];
-/*
-    axios.get('http://127.0.0.1:5000/api/cases/all')
-    .then(resConf => {
-      console.log(resConf);
-      {
-        resConf.data.map((dataObj) => {
-          dates.push(dataObj.DateRepConf);
-        })
-      }
-    })
-*/
-    axios
-    .get('https://testflask122.herokuapp.com/api/charts?status=NEW')
-    .then(resNew => {
-      console.log(resNew);
-      {
-        resNew.data.map((dataObj) => {
-          casesNew.push(dataObj.new_cases);
-      })}
+    let casesRecov = [];
+    const newReq = axios.get(newURL);
+    const recovReq = axios.get(recovURL); 
+    const diedReq = axios.get(diedURL);
 
     axios
-    .get('https://testflask122.herokuapp.com/api/charts?status=DIED')
-    .then(resDied => {
-      console.log(resDied);
-      {
-        resDied.data.map((dataObj) => {
-          casesDied.push(dataObj.deaths);
-          dates.push(dataObj.DateDied);
-        })
-      }
-    }
+    .all([newReq, recovReq, diedReq])
+    .then(
+      axios.spread((...responses) => {
 
+        const dataNew = responses[0];
+          dataNew.data.forEach((dataObj) => {
+            casesNew.push(dataObj.new_cases);
+            dates.push(dataObj.DateRepConf);
+            });
+     
+        const dataRecov = responses[1];
+          dataRecov.data.forEach((dataObj) => {
+            casesRecov.push(dataObj.recoveries);
+            });
+
+        const dataDied = responses[2];
+          dataDied.data.forEach((dataObj) => {
+            casesDied.push(dataObj.deaths);
+            });
+      
+        setChartData({
+          labels: dates,
+          datasets: [
+            {    
+              label: 'New Cases',
+              data: casesNew,
+              backgroundColor: 'rgba(255, 159, 64, 0.5)',
+              borderColor: 'white',
+            },
+            {    
+              label: 'Recoveries',
+              data: casesRecov,
+              backgroundColor: 'rgba(75, 192, 192, 0.7)',
+              borderColor: 'white',
+            },
+            {    
+              label: 'Deaths',
+              data: casesDied,
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              borderColor: 'white',
+            }
+          ]});
+      })
     )
-      setChartData({
-        labels: dates,
-        datasets: [
-          {    
-            label: 'New Cases',
-            data: casesNew,
-            backgroundColor: 'rgba(255, 159, 64, 0.5)',
-            borderColor: 'white',
-
-          },
-          {
-            label: 'Deaths',
-            data: casesDied,
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            borderColor: 'white',
-    
-          }
-        ]
-      });
-
-
-    })
-    .catch(err =>{
-      console.log(err);
-    });
-    console.log(dates, casesDied)
-
-
- 
   };
+
+  
   useEffect(() => {
     getChartData();
   }, []);
