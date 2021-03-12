@@ -24,7 +24,7 @@ const BarChart = () => {
     })
 */
     axios
-    .get('http://127.0.0.1:5000/api/charts?status=NEW')
+    .get('https://testflask122.herokuapp.com/api/charts?status=NEW')
     .then(resNew => {
       console.log(resNew);
       {
@@ -33,7 +33,7 @@ const BarChart = () => {
       })}
 
     axios
-    .get('http://127.0.0.1:5000/api/charts?status=DIED')
+    .get('https://testflask122.herokuapp.com/api/charts?status=DIED')
     .then(resDied => {
       console.log(resDied);
       {
