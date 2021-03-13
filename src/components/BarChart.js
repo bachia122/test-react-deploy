@@ -89,8 +89,9 @@ const BarChart = () => {
             } }}
     />
     </div>
+    
     );
 };
-
+ 
   
 export default BarChart;

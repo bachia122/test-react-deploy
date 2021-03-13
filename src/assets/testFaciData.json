@@ -1,0 +1,54 @@
+{
+  "venues": [
+      {
+          "description": "",
+          "name": "Allegiant Regional Care Hospital",
+          "geometry": [10.285648742252407, 123.99029621904329]
+      },
+      {
+          "description": "",
+          "name": "BioPath Clinical Diagnostics, Inc - CEBU",
+          "geometry": [10.306958552568085, 123.89372518366024]
+      },
+      {
+          "description": "",
+          "name": "BioPath Clinical Diagnostics, Inc. - AFRIMS & Biopath Clinical Diagnostics, Inc. - AFRIMS GeneXpert Laboratory",
+          "geometry": [10.307211186594019, 123.89372269715311 ]
+      },
+      {
+          "description": "",
+          "name": "Cebu Doctors University Hospital, Inc.",
+          "geometry": [10.314740889802549, 123.89208244133194]
+      },
+      {
+          "description": "",
+          "name": "Cebu TB Reference Laboratory - GeneXpert & Cebu TB Reference Laboratory - Molecular Facility for COVID-19 Testing",
+          "geometry": [10.307627796244537, 123.8934804971533]
+      },  
+      {
+        "description": "",
+        "name": "Chong Hua Hospital",
+        "geometry": [10.310304848988412, 123.89126369900362]
+     },
+      {
+          "description": "",
+          "name": "Philippine Red Cross - Cebu Chapter",
+          "geometry": [10.31261951408936, 123.89195091064612]
+      },
+      {
+          "description": "",
+          "name": "Prime Care Alpha Covid-19 Testing Laboratory",
+          "geometry": [10.322772449496522, 123.97888732122877]
+      },
+      {
+          "description": "",
+          "name": "University of Cebu Medical Center",
+          "geometry": [10.320702297611367, 123.93098907016768]
+      },
+      {
+          "description": "",
+          "name": "Vicente Sotto Memorial Medical Center (VSMMC)",
+          "geometry": [10.30832376263142, 123.8915915971532]
+      }
+  ]
+}

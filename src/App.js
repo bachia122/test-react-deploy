@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from './components/BarChart';
+import TestFaciMap from './components/TestFaciMap';
 import './App.css';
 import './index.css';
+import 'leaflet/dist/leaflet.css';
 
   const Url = "https://testflask122.herokuapp.com/api/cases/totals";
 
@@ -32,10 +34,18 @@ import './index.css';
         {caseCounts.map(count => <div>{count.recoveries}</div>)} </div>
         <div className="section">  Deaths
         {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
-      <div>
-        <BarChart />
+      <div >
+        <BarChart /> 
+
+        <div className="app">
+          <TestFaciMap />        
+        </div>
+        
+
+        <span>Email me at <a style={{ marginLeft: '.5rem' }}  href="mailto:cebucovidtracker@gmail.com">cebucovidtracker@gmail.com</a></span>
       </div>
-      </div>
+
+    </div>
      
     );
 
