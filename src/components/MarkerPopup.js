@@ -6,7 +6,6 @@ const MarkerPopup = (props) => {
   return  (
     <Popup>
       <div className='popup-text'>{name}</div>
-      <div className='popup-text'>/-- tallies here --/</div>
     </Popup>
   );
 };

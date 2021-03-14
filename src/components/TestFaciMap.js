@@ -15,14 +15,14 @@ class TestFaciMap extends Component {
   render() {
     const { currentLocation, zoom } = this.state;
     return (
-      <MapContainer center={currentLocation} zoom={zoom} scrollWheelZoom = {false}>
+      <MapContainer style={{ height: "400px", width: "70vw" }} center={currentLocation} zoom={zoom} scrollWheelZoom = {false}>
         <TileLayer
           url="https://api.maptiler.com/maps/pastel/{z}/{x}/{y}.png?key=leLR1VA8lmHQnwK3WZM9"
             attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />      
      
       <Markers venues={data.venues}/>
-    
+
       </MapContainer>
     );
   }

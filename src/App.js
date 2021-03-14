@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from './components/BarChart';
 import TestFaciMap from './components/TestFaciMap';
+import Tabs from "./components/Tabs"; 
 import './App.css';
 import './index.css';
 import 'leaflet/dist/leaflet.css';
@@ -35,11 +36,18 @@ import 'leaflet/dist/leaflet.css';
         <div className="section">  Deaths
         {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
       <div >
-        <BarChart /> 
-
-        <div className="app">
-          <TestFaciMap />        
-        </div>
+     
+        <Tabs> 
+          <div label="BarChart"> 
+            <h4>Daily Cases / Recoveries / Deaths in Cebu</h4>
+            <BarChart /> 
+          </div> 
+          <div label="Map"> 
+          <h4>COVID19 Testing Facilities in Cebu</h4>
+            <TestFaciMap />    
+          </div>
+        </Tabs> 
+   
         
 
         <span>Email me at <a style={{ marginLeft: '.5rem' }}  href="mailto:cebucovidtracker@gmail.com">cebucovidtracker@gmail.com</a></span>
