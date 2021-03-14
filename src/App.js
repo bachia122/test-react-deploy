@@ -27,13 +27,13 @@ import 'leaflet/dist/leaflet.css';
       <div className="app">
               <h2>Cebu COVID19 Tracker</h2>
                <h3>as of /date/ </h3>
-        <div className="section">Total Cases
+        <div className = 'section'>Total Cases
         {caseCounts.map(count => <div>{count.total}</div>)}</div>
-        <div className="section"> Active Cases
+        <div className = 'section'> Active Cases
         {caseCounts.map(count => <div>{count.active}</div>)} </div>
-        <div className="section"> Recoveries
+        <div className = 'section'> Recoveries
         {caseCounts.map(count => <div>{count.recoveries}</div>)} </div>
-        <div className="section">  Deaths
+        <div className = 'section'>  Deaths
         {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
       <div >
      
