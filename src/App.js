@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import BarChart from './components/BarChart';
 import TestFaciMap from './components/TestFaciMap';
 import Tabs from "./components/Tabs"; 
+import Title from "./components/Title"; 
+import Logo from './components/Logo';
 import './App.css';
 import './index.css';
 import 'leaflet/dist/leaflet.css';
@@ -25,21 +27,25 @@ import 'leaflet/dist/leaflet.css';
     return (
 
       <div className="app">
-              <h2>Cebu COVID19 Tracker</h2>
-               <h3>as of /date/ </h3>
-        <div className = 'section'>Total Cases
-        {caseCounts.map(count => <div>{count.total}</div>)}</div>
-        <div className = 'section'> Active Cases
-        {caseCounts.map(count => <div>{count.active}</div>)} </div>
+        <Logo className="App-logo" />
+        <Title className="Title" />
+
+        <div className = 'section'>
+          Total Cases {caseCounts.map(count => <div>{count.total}</div>)}  </div>
+          <div className = 'section'>
+          Active Cases {caseCounts.map(count => <div>{count.active}</div>)} 
+        </div>
+        
         <div className = 'section'> Recoveries
         {caseCounts.map(count => <div>{count.recoveries}</div>)} </div>
         <div className = 'section'>  Deaths
         {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
+ 
       <div >
      
         <Tabs> 
           <div label="BarChart"> 
-            <h4>Daily Cases / Recoveries / Deaths in Cebu</h4>
+            <h4>Daily Incidences Chart</h4>
             <BarChart /> 
           </div> 
           <div label="Map"> 
