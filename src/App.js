@@ -4,6 +4,8 @@ import TestFaciMap from './components/TestFaciMap';
 import Tabs from "./components/Tabs"; 
 import Title from "./components/Title"; 
 import Logo from './components/Logo';
+import Radio from './components/Radio';
+import Dashboard from './assets/dashboard';
 import './App.css';
 import './index.css';
 import 'leaflet/dist/leaflet.css';
@@ -31,15 +33,26 @@ import 'leaflet/dist/leaflet.css';
         <Title className="Title" />
 
         <div className = 'section'>
-          Total Cases {caseCounts.map(count => <div>{count.total}</div>)}  </div>
+          <h5>Total Cases</h5> {caseCounts.map(count => <div>{count.total}</div>)}  
+        </div>
+
           <div className = 'section'>
-          Active Cases {caseCounts.map(count => <div>{count.active}</div>)} 
+          <h5> Active Cases </h5> 
+          {caseCounts.map(count => <div>{count.active}</div>)} 
+          {caseCounts.map(count => <div>{count.new_today}</div>)} 
         </div>
         
-        <div className = 'section'> Recoveries
-        {caseCounts.map(count => <div>{count.recoveries}</div>)} </div>
-        <div className = 'section'>  Deaths
-        {caseCounts.map(count => <div>{count.deaths}</div>)}</div>
+        <div className = 'section'> 
+        <h5> Recoveries </h5>
+        {caseCounts.map(count => <div>{count.recoveries}</div>)} 
+        {caseCounts.map(count => <div>{count.recov_today}</div>)} 
+        </div>
+        
+        <div className = 'section'>  
+        <h5> Deaths </h5>
+        {caseCounts.map(count => <div>{count.deaths}</div>)}
+        {caseCounts.map(count => <div>{count.died_today}</div>)} 
+        </div>
  
       <div >
      
@@ -53,7 +66,7 @@ import 'leaflet/dist/leaflet.css';
             <TestFaciMap />    
           </div>
         </Tabs> 
-   
+   <Dashboard />
         
 
         <span>Email me at <a style={{ marginLeft: '.5rem' }}  href="mailto:cebucovidtracker@gmail.com">cebucovidtracker@gmail.com</a></span>
