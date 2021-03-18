@@ -74,8 +74,8 @@ const BarChart = () => {
     return(
     <div><Bar
         data={chartData}
-        width={900}
-        height={500}
+        width={700}
+        height={400}
         options={{maintainAspectRatio: false,
             scales:{
                 xAxes: [{ stacked: true}],

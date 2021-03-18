@@ -3,13 +3,12 @@ import BarChart from './components/BarChart';
 import TestFaciMap from './components/TestFaciMap';
 import Tabs from "./components/Tabs"; 
 import Title from "./components/Title"; 
-import Logo from './components/Logo';
 import Radio from './components/Radio';
 import Dashboard from './assets/dashboard';
 import './App.css';
 import './index.css';
 import 'leaflet/dist/leaflet.css';
-
+import s from './assets/dashboard/styles/Layout.module.scss';
   const Url = "https://testflask122.herokuapp.com/api/cases/totals";
 
   function App() {
@@ -27,10 +26,39 @@ import 'leaflet/dist/leaflet.css';
     };
 
     return (
+    <div className={s.wrap}>
 
-      <div className="app">
-        <Logo className="App-logo" />
+      
+   
+      <div > 
+        <Dashboard />
+      </div>
+      
+  
+     <footer className={s.contentFooter}>
+                 <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
+               </footer>
+   </div>
+
+      
+
+     
+
+   
+    );
+
+
+
+}
+export default App;
+
+
+/*
+      <div> 
         <Title className="Title" />
+
+      </div>
+
 
         <div className = 'section'>
           <h5>Total Cases</h5> {caseCounts.map(count => <div>{count.total}</div>)}  
@@ -53,30 +81,7 @@ import 'leaflet/dist/leaflet.css';
         {caseCounts.map(count => <div>{count.deaths}</div>)}
         {caseCounts.map(count => <div>{count.died_today}</div>)} 
         </div>
- 
-      <div >
-     
-        <Tabs> 
-          <div label="BarChart"> 
-            <h4>Daily Incidences Chart</h4>
-            <BarChart /> 
-          </div> 
-          <div label="Map"> 
-          <h4>COVID19 Testing Facilities in Cebu</h4>
-            <TestFaciMap />    
-          </div>
-        </Tabs> 
-   <Dashboard />
-        
-
-        <span>Email me at <a style={{ marginLeft: '.5rem' }}  href="mailto:cebucovidtracker@gmail.com">cebucovidtracker@gmail.com</a></span>
-      </div>
-
-    </div>
-     
-    );
 
 
 
-}
-export default App;
+*/

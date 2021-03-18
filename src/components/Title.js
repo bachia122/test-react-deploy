@@ -20,10 +20,14 @@ function Title() {
     };
     return (
       <div >
+        <h1 className="page-title">
+          CEBU COVID-19 Tracker &nbsp;
+    
+            <small> <a href='https://bit.ly/DataDropPH'>Source</a> data as of { UpdateDate.source_date }</small>
+          
+        </h1>
 
-     <h1>CEBU COVID19 TRACKER</h1>
-
-      <a href='https://bit.ly/DataDropPH'>Source</a> data as of { UpdateDate.source_date }
+     
     
       </div>
     )
