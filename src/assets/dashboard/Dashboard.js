@@ -3,9 +3,11 @@ import { Row, Col, Progress, Table, Label, Input } from "reactstrap";
 import Widget from "./components/Widget";
 import Map from "./components/am4chartMap/am4chartMap";
 import BarChart from "../../components/BarChart"
+import Overview from "../../components/Overview"
 import Title from "../../components/Title"
 import AnimateNumber from "react-animated-number";
 import s from "./Dashboard.module.scss";
+
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -61,18 +63,32 @@ class Dashboard extends React.Component {
           <Col lg={4}>
             <Widget
               className="bg-transparent"
-              title={
-                <h5>
-                  {" "}
-                  Map
-                  <span className="fw-semi-bold">&nbsp;Statistics</span>
-                </h5>
-              }
-              settings
-              refresh
-              close
-            >
-              <p>
+              title={<h3 className='card-title'>OVERVIEW</h3>}>
+              <Overview />
+            </Widget>
+          </Col>
+        </Row>
+
+        <Row>
+          
+          <Col xs={12}>
+            <Widget title={<h3 className='card-title'> TIME SERIES </h3>} close settings>
+              <div>
+                <BarChart />
+              </div>
+            </Widget>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+}
+
+export default Dashboard;
+
+
+/*
+<p>
                 Status: <strong>Live</strong>
               </p>
               <p>
@@ -102,17 +118,7 @@ class Dashboard extends React.Component {
                 </div>
               </div>
               <div className="row progress-stats">
-                <div className="col-md-9 col-12">
-                  <h6 className="name fw-semi-bold">Local Visits</h6>
-                  <p className="description deemphasize mb-xs text-white">
-                    P. to C. Conversion
-                  </p>
-                  <Progress
-                    color="danger"
-                    value="39"
-                    className="bg-subtle-blue progress-xs"
-                  />
-                </div>
+            
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-default text-light">
                     <small>
@@ -166,26 +172,8 @@ class Dashboard extends React.Component {
                   </button>
                 </span>
               </div>
-            </Widget>
-          </Col>
-        </Row>
 
-        <Row>
-          
-          <Col xs={12}>
-            <Widget title={<h3> TIME SERIES </h3>} close settings>
-              <div>
-                <BarChart />
-              </div>
-            </Widget>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
-}
 
-export default Dashboard;
 
 /*
 

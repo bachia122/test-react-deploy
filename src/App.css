@@ -16,11 +16,9 @@
 }
 */
 .section{
-  height: 70px;
+  height: 100px;
   width: 200px;
-  font-size: 20px;
-  background: #485461;
-  border-radius: 5px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,6 +64,14 @@
   background-color: white;
   border: solid rgba(204, 204, 204, 0.205);
   border-width: 1px 1px 0 1px;
+}
+
+.card-title {
+  position: relative;
+  z-index: 1;
+  top: 10px;
+  left: 30px;
+  margin: 5% 10%;
 }
 
 h1 { 

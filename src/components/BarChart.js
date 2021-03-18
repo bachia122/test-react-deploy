@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {Bar} from 'react-chartjs-2'
 import axios from 'axios'
 
+
 const BarChart = () => {
 
   const [chartData, setChartData] = useState([]);
@@ -46,19 +47,19 @@ const BarChart = () => {
             {    
               label: 'New Cases',
               data: casesNew,
-              backgroundColor: 'rgba(255, 159, 64, 0.5)',
+              backgroundColor: 'rgba(255, 64, 64, 0.7)',
               borderColor: 'white',
             },
             {    
               label: 'Recoveries',
               data: casesRecov,
-              backgroundColor: 'rgba(75, 192, 192, 0.7)',
+              backgroundColor: 'rgba(64, 159, 64, 0.7)',
               borderColor: 'white',
             },
             {    
               label: 'Deaths',
               data: casesDied,
-              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              backgroundColor: 'rgba(75, 192, 192, 0.9)',
               borderColor: 'white',
             }
           ]});
@@ -75,15 +76,37 @@ const BarChart = () => {
     <div><Bar
         data={chartData}
         width={700}
-        height={400}
-        options={{maintainAspectRatio: false,
+        height={200}
+        options={{
+          legend: {
+            position: 'top',
+            labels: {
+              boxWidth: 20,
+              fontStyle: 'bold',
+              fontColor: 'rgba(255,255,255,0.8)',
+            }
+
+          },
+          maintainAspectRatio: false,
             scales:{
-                xAxes: [{ stacked: true}],
+                xAxes: [{ 
+                  ticks:{
+                    fontColor: 'rgba(255,255,255,0.4)',
+                    fontFamily: 'Tahoma',
+                    maxTicksLimit: 10,
+                    maxRotation: 0,
+                    minRotation: 0,
+                    },
+                  type: 'time',
+                  time: { unit: 'month'},
+                  stacked: true
+                }],
                 yAxes: [{
                     ticks:{
-                        beginAtZero: true,
-                        },
-                        stacked: false
+                      fontFamily: 'Tahoma',
+                      beginAtZero: true,
+                      },
+                    stacked: false
                     }
                 ]
             } }}
