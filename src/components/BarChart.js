@@ -9,7 +9,7 @@ const BarChart = () => {
 
 
   const getChartData = () => {
-    let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=NEW';
+    let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=ACTIVE';
     let recovURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
     let diedURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=DIED';
     let dates = [];
@@ -45,7 +45,7 @@ const BarChart = () => {
           labels: dates,
           datasets: [
             {    
-              label: 'New Cases',
+              label: 'Active Cases',
               data: casesNew,
               backgroundColor: 'rgba(255, 64, 64, 0.7)',
               borderColor: 'white',
