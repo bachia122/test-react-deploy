@@ -32,7 +32,7 @@ class Am4chartMap extends Component {
     let polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
     polygonSeries.useGeodata = true;
     map.homeZoomLevel = 1; 
-    map.homeGeoPoint = { latitude: 10.476683924856166, longitude: 123.85091389045924 }
+    map.homeGeoPoint = { latitude: 12.5, longitude: 119.9 }
     map.zoomControl = new am4maps.ZoomControl();
     map.zoomControl.layout = 'horizontal';
     map.zoomControl.align = 'left';
@@ -54,7 +54,7 @@ class Am4chartMap extends Component {
     map.zoomControl.plusButton.scale = .75;
     map.zoomControl.plusButton.label.scale = .75;
     map.zoomControl.plusButton.dx = 5;
-    map.chartContainer.wheelable = false; 
+    map.chartContainer.wheelable = true; 
     let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
     plusButtonHoverState.properties.fill = am4core.color("#354D84");
     let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
@@ -99,7 +99,7 @@ class Am4chartMap extends Component {
          
         </div>
         <div className={s.map} id="map">
-          <span>Alternative content for the map</span>
+          <span>Loading map</span>
         </div>
       </div>
     );

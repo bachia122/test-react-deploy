@@ -34,10 +34,7 @@ import s from './assets/dashboard/styles/Layout.module.scss';
         <Dashboard />
       </div>
       
-  
-     <footer className={s.contentFooter}>
-                 <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
-               </footer>
+      
    </div>
 
       

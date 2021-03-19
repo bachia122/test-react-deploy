@@ -71,14 +71,18 @@ class Dashboard extends React.Component {
 
         <Row>
           
-          <Col xs={12}>
-            <Widget title={<h3 className='card-title'> TIME SERIES </h3>} close settings>
-              <div>
+          <Col lg={12}>
+            <Widget className="bg-transparent" title={<h3 className='card-title'> TIME SERIES </h3> }>
+      
                 <BarChart />
-              </div>
+     
             </Widget>
           </Col>
+          
         </Row>
+        <footer className={s.contentFooter}>
+                 <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
+               </footer>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {Bar} from 'react-chartjs-2'
 import axios from 'axios'
-
+import '../App.css'
 
 const BarChart = () => {
 
@@ -73,10 +73,10 @@ const BarChart = () => {
   }, []);
 
     return(
-    <div><Bar
+    <div className='timeseries'><Bar
         data={chartData}
-        width={700}
-        height={200}
+        //width={700}
+        //height={200}
         options={{
           legend: {
             position: 'top',
@@ -87,6 +87,7 @@ const BarChart = () => {
             }
 
           },
+          responsive: true,
           maintainAspectRatio: false,
             scales:{
                 xAxes: [{ 

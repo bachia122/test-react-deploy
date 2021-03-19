@@ -27,7 +27,7 @@ function ChartStats() {
       <div>
         <h3>ACTIVE CASES</h3>
         {data.map(record => 
-        <div><h5>{record.top_5}</h5> {record.cases}</div>)}  
+        <div><h4>{record.top_5}</h4> {record.cases}</div>)}  
       </div>
 )};
 
