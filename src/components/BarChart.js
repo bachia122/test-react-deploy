@@ -9,9 +9,9 @@ const BarChart = () => {
 
 
   const getChartData = () => {
-    let newURL = 'http://testflask122.herokuapp.com/api/cases/charts?status=NEW';
-    let recovURL = 'http://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
-    let diedURL = 'http://testflask122.herokuapp.com/api/cases/charts?status=DIED';
+    let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=NEW';
+    let recovURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
+    let diedURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=DIED';
     let dates = [];
     let casesNew = [];
     let casesDied = [];
