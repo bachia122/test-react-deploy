@@ -27,7 +27,7 @@ const BarChart = () => {
 
         const dataNew = responses[0];
           dataNew.data.forEach((dataObj) => {
-            casesNew.push(dataObj.new_cases);
+            casesNew.push(dataObj.active_cases);
             dates.push(dataObj.DateRepConf);
             });
      
