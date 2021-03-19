@@ -9,25 +9,25 @@ const BarChart = () => {
 
 
   const getChartData = () => {
-    let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=ACTIVE';
+    let activeURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=ACTIVE';
     let recovURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
     let diedURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=DIED';
     let dates = [];
-    let casesNew = [];
+    let casesActive = [];
     let casesDied = [];
     let casesRecov = [];
-    const newReq = axios.get(newURL);
+    const activeReq = axios.get(activeURL);
     const recovReq = axios.get(recovURL); 
     const diedReq = axios.get(diedURL);
 
     axios
-    .all([newReq, recovReq, diedReq])
+    .all([activeReq, recovReq, diedReq])
     .then(
       axios.spread((...responses) => {
 
-        const dataNew = responses[0];
-          dataNew.data.forEach((dataObj) => {
-            casesNew.push(dataObj.active_cases);
+        const dataActive = responses[0];
+          dataActive.data.forEach((dataObj) => {
+            casesActive.push(dataObj.active_cases);
             dates.push(dataObj.DateRepConf);
             });
      
@@ -46,7 +46,7 @@ const BarChart = () => {
           datasets: [
             {    
               label: 'Active Cases',
-              data: casesNew,
+              data: casesActive,
               backgroundColor: 'rgba(255, 64, 64, 0.7)',
               borderColor: 'white',
             },
