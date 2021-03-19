@@ -5,6 +5,10 @@ import Map from "./components/am4chartMap/am4chartMap";
 import BarChart from "../../components/BarChart"
 import Overview from "../../components/Overview"
 import Title from "../../components/Title"
+import TestStats from "../../components/TestingStat"
+import BedsStats from "../../components/BedsStat"
+import PatientStats from "../../components/PatientStat"
+import FaciOccupancy from "../../components/FaciOccupancy"
 import AnimateNumber from "react-animated-number";
 import s from "./Dashboard.module.scss";
 
@@ -53,32 +57,62 @@ class Dashboard extends React.Component {
         
 
         <Row>
-          <Col lg={7}>
-            <Widget className="bg-transparent" >
-              <Map />
-            </Widget>
-          </Col>
-          <Col lg={1} />
-
-          <Col lg={4}>
+        <Col lg={2}>
             <Widget
               className="bg-transparent"
               title={<h3 className='card-title'>OVERVIEW</h3>}>
               <Overview />
             </Widget>
           </Col>
+
+          <Col lg={4}>
+            <Widget className="bg-transparent" >
+              <Map />
+            </Widget>
+          </Col>
+
+          <Col lg={2} >
+            <Widget className="bg-transparent" title={<h3 className='card-title'> TESTING OVERVIEW </h3> } >
+            <TestStats />
+            </Widget>
+          </Col>
+
+          <Col lg={4} >
+            <Row>
+             <Widget className="bg-transparent" title={<h3 className='card-title'> STATUS OF ADMITTED PATIENTS </h3> } >
+             <PatientStats />
+            </Widget>
+            </Row>
+
+            <Row>
+             <Widget className="bg-transparent" title={<h3 className='card-title'> BED OCCUPANCY </h3> }>
+              <BedsStats />
+            </Widget>
+            </Row>
+            
+          </Col>
+          
+
+          
         </Row>
 
         <Row>
           
-          <Col lg={12}>
+          <Col lg={8}>
             <Widget className="bg-transparent" title={<h3 className='card-title'> TIME SERIES </h3> }>
       
                 <BarChart />
      
             </Widget>
           </Col>
-          
+
+          <Col lg={4} >
+            <Widget className="bg-transparent" title={<h3 className='card-title'> COVID19 FACILITIES OCCUPANCY RATE </h3> }>
+              <FaciOccupancy />
+           </Widget>
+          </Col>
+
+
         </Row>
         <footer className={s.contentFooter}>
                  <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
