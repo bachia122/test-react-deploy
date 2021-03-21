@@ -29,7 +29,7 @@ function App() {
         <div className ='lead'>
         <h5> Active Cases </h5> 
         {caseCounts.map(count => <div className='text-danger'>{count.active}</div>)} 
-        + {caseCounts.map(count => <div className='text-danger'>{count.new_today}</div>)} 
+        {caseCounts.map(count => <div className='text-danger'>{count.new_today}</div>)} 
       </div>
       
       <div className = 'lead'> 
