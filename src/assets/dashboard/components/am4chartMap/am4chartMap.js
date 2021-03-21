@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
@@ -54,7 +54,7 @@ class Am4chartMap extends Component {
     map.zoomControl.plusButton.scale = .75;
     map.zoomControl.plusButton.label.scale = .75;
     map.zoomControl.plusButton.dx = 5;
-    map.chartContainer.wheelable = true; 
+    map.chartContainer.wheelable = false; 
     let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
     plusButtonHoverState.properties.fill = am4core.color("#354D84");
     let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");

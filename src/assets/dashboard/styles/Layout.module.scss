@@ -17,7 +17,8 @@
   display: flex;
   left: 0;
   right: 0;
-
+  align-items: center;
+  justify-content: center;
   
   @media print {
     margin: 0;
@@ -42,6 +43,9 @@
   flex-grow: 1;
   // 20px for footer height
   padding: 25px $content-padding ($content-padding + 20px);
+  align-items: center;
+  justify-content: center;
+  
 
   @media (max-width: breakpoint-max(sm)) {
     padding: 20px 15px;

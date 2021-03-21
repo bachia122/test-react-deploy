@@ -9,7 +9,9 @@ import TestStats from "../../components/TestingStat"
 import BedsStats from "../../components/BedsStat"
 import PatientStats from "../../components/PatientStat"
 import FaciOccupancy from "../../components/FaciOccupancy"
+import RadialChart from "../../components/RadialChart"
 import AnimateNumber from "react-animated-number";
+import News from "../../components/News"
 import s from "./Dashboard.module.scss";
 
 
@@ -55,68 +57,90 @@ class Dashboard extends React.Component {
       <div className={s.root}>
         <Title />
         
+        <Col lg={8}>
 
-        <Row>
-        <Col lg={2}>
-            <Widget
-              className="bg-transparent"
-              title={<h3 className='card-title'>OVERVIEW</h3>}>
-              <Overview />
-            </Widget>
-          </Col>
+          <Row className="row justify-content-center"> 
+            <Col lg={3}>
+                <Widget
+                  className="bg-transparent"
+                  title={<h3 className='card-title'>OVERVIEW</h3>}>
+                  <Overview />
+                </Widget>
+            </Col>
 
-          <Col lg={4}>
-            <Widget className="bg-transparent" >
-              <Map />
-            </Widget>
-          </Col>
+            <Col lg={6}>
+              <Widget className="bg-transparent" >
+                <Map />
+              </Widget>
+            </Col>
 
-          <Col lg={2} >
-            <Widget className="bg-transparent" title={<h3 className='card-title'> TESTING OVERVIEW </h3> } >
-            <TestStats />
-            </Widget>
-          </Col>
+            <Col lg={3} >
+              
+              <Widget className={s.col3} title={<h3 className='card-title'> TESTING STATS</h3> } >
+              <TestStats />
+              </Widget>
+            </Col>
 
-          <Col lg={4} >
-            <Row>
-             <Widget className="bg-transparent" title={<h3 className='card-title'> STATUS OF ADMITTED PATIENTS </h3> } >
-             <PatientStats />
-            </Widget>
-            </Row>
+          </Row>
 
-            <Row>
-             <Widget className="bg-transparent" title={<h3 className='card-title'> BED OCCUPANCY </h3> }>
-              <BedsStats />
-            </Widget>
-            </Row>
-            
-          </Col>
-          
-
-          
-        </Row>
-
-        <Row>
-          
-          <Col lg={8}>
-            <Widget className="bg-transparent" title={<h3 className='card-title'> TIME SERIES </h3> }>
+          <Row>
+                 
+              <Widget className="bg-transparent" title={<h3 className='card-title'> TIME SERIES </h3> }>
+        
+                  <BarChart />
       
-                <BarChart />
+              </Widget>
      
-            </Widget>
-          </Col>
 
-          <Col lg={4} >
-            <Widget className="bg-transparent" title={<h3 className='card-title'> COVID19 FACILITIES OCCUPANCY RATE </h3> }>
-              <FaciOccupancy />
-           </Widget>
-          </Col>
+          </Row>
 
 
-        </Row>
-        <footer className={s.contentFooter}>
-                 <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
-               </footer>
+        </Col>
+
+
+
+
+        <Col lg={4}>
+            <Row> 
+
+              <Col lg={6}>
+                <Widget className="bg-transparent" title={<h3 className='card-title'> ADMITTED PATIENTS </h3> } >
+                  <PatientStats />
+                  
+                </Widget>
+              </Col>
+
+              <Col lg={6}>
+                <Widget className="bg-transparent" title={<h3 className='card-title'> BED OCCUPANCY  </h3> }>
+                <RadialChart />
+                'BedStats'
+                </Widget>
+              </Col>
+            </Row>
+
+            <Row>
+              
+                <Widget className="bg-transparent" title={<h3 className='card-title'> COVID19 FACILITIES OCCUPANCY RATE </h3> }>
+                  <FaciOccupancy />
+                </Widget>
+          
+            </Row>
+
+            <Row>
+             
+                <Widget className="bg-transparent" title={<h3 className='card-title'> NEWS </h3> }>
+                  <News />
+                </Widget>
+           
+            </Row>
+            <footer className={s.contentFooter}>
+                  <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
+                </footer>
+       
+        
+        </Col>
+        
+
       </div>
     );
   }

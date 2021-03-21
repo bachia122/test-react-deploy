@@ -18,11 +18,11 @@ function App() {
   };
 
   return (
-  <div >
+  <div className='col1'>
 
     
  
-<div className = 'section'>
+      <div className = 'section'>
         <h5>Total Cases</h5> {caseCounts.map(count => <div>{count.total}</div>)}  
       </div>
 

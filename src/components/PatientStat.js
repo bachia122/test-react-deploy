@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
-
+import '../App.css'
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_phHigh from "@amcharts/amcharts4-geodata/philippinesHigh";
@@ -25,7 +25,7 @@ function PatientStats() {
 
   return (
       <div>
-        <h5>ASYMPTOMATIC</h5>{data.map(record => <div>{record.num_asym}</div>)}  
+        <h5>ASYMPTOMATIC</h5>{data.map(record => record.num_asym)}  
         <h5>MILD</h5>{data.map(record => <div>{record.num_mild}</div>)}  
         <h5>SEVERE</h5>{data.map(record => <div>{record.num_severe}</div>)}  
         <h5>CRITICAL</h5>{data.map(record => <div>{record.num_crit}</div>)}  

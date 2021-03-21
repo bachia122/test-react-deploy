@@ -74,8 +74,13 @@
 
 .timeseries {
   position: relative; 
-  height:250px; 
+  height:25vh; 
   width:100%;
+}
+
+.test-stats {
+
+  text-align: center;
 }
 
 h1 { 
@@ -98,7 +103,9 @@ h4 {
   font-family: 'Bebas Neue', cursive;
  }
 
-
+.col1 {
+height: 50vh;
+}
  
 
 /*
