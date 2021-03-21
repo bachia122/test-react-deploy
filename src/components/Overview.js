@@ -22,23 +22,23 @@ function App() {
 
     
  
-      <div className = 'section'>
+      <div className = 'lead'>
         <h5>Total Cases</h5> {caseCounts.map(count => <div>{count.total}</div>)}  
       </div>
 
-        <div className = 'section'>
+        <div className ='lead'>
         <h5> Active Cases </h5> 
         {caseCounts.map(count => <div className='text-danger'>{count.active}</div>)} 
-        {caseCounts.map(count => <div className='text-danger'>{count.new_today}</div>)} 
+        + {caseCounts.map(count => <div className='text-danger'>{count.new_today}</div>)} 
       </div>
       
-      <div className = 'section'> 
+      <div className = 'lead'> 
       <h5> Recoveries </h5>
       {caseCounts.map(count => <div className='text-success'>{count.recoveries}</div>)} 
-      {caseCounts.map(count => <div className='text-success'> {count.recov_today}</div>)} 
+      {caseCounts.map(count => <div className='text-success'>{count.recov_today}</div>)}
       </div>
       
-      <div className = 'section'>  
+      <div className = 'lead'>  
       <h5> Deaths </h5>
       {caseCounts.map(count => <div className='text-info'>{count.deaths}</div>)}
       {caseCounts.map(count => <div className='text-info'>{count.died_today}</div>)} 
