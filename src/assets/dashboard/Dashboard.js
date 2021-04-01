@@ -12,6 +12,7 @@ import FaciOccupancy from "../../components/FaciOccupancy"
 import RadialChart from "../../components/RadialChart"
 import AnimateNumber from "react-animated-number";
 import News from "../../components/News"
+import FaciTable from '../../components/FaciTable/FaciTable'
 import s from "./Dashboard.module.scss";
 
 
@@ -57,7 +58,7 @@ class Dashboard extends React.Component {
       <div className={s.root}>
         <Title />
         
-        <Col lg={8}>
+        <Col lg={6}>
 
           <Row className="row justify-content-center"> 
             <Col lg={3}>
@@ -100,7 +101,7 @@ class Dashboard extends React.Component {
 
 
 
-        <Col lg={4}>
+        <Col lg={6}>
             <Row> 
 
               <Col lg={6}>
@@ -117,15 +118,13 @@ class Dashboard extends React.Component {
                 </Widget>
               </Col>
             </Row>
-
             <Row>
-              
-                <Widget className="bg-transparent" title={<h3 className='card-title'> COVID19 FACILITIES OCCUPANCY RATE </h3> }>
-                  <FaciOccupancy />
+             
+                <Widget className="bg-transparent" title={<h3 className='card-title'> Testing Facilities </h3> }>
+                  <FaciTable />
                 </Widget>
-          
+           
             </Row>
-
             <Row>
              
                 <Widget className="bg-transparent" title={<h3 className='card-title'> NEWS </h3> }>

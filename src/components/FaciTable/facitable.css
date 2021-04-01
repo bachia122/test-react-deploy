@@ -1,0 +1,23 @@
+.header-class {
+    font-size: large; 
+}
+.expander {
+    display: flex;
+    flex-wrap: wrap;
+
+    column-fill: balance;
+  }
+  
+  .l-col {
+    flex: 70%;
+    padding: 10px;
+  }
+  .r-col {
+    flex: 30%;
+    padding: 10px;
+  }
+  
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
