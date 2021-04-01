@@ -5,7 +5,7 @@ export default {
                 data: [4, 6, 5, 7, 5],
             }],
             width: '100%',
-            height: 30,
+            height: 100,
             options: {
                 stroke: {
                     width: 1
@@ -38,7 +38,7 @@ export default {
                 data: [2, 3, 1, 4, 4],
             }],
             width: '100%',
-            height: 30,
+            height: 70,
             options: {
                 stroke: {
                     width: 1

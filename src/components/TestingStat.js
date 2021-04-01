@@ -22,7 +22,7 @@ function TestStats() {
 
   return (
       <div className = 'test-stats'>
-        <h4>TOTAL INDIVIDUALS TESTED</h4>{data.map(record => <div>{record.total_indv_test}</div>)}  
+      
         <h5>NO. of Test Labs {data.map(record => <div>{record.test_labs}</div>)}  </h5>
         
         <p></p>

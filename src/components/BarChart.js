@@ -10,18 +10,21 @@ const BarChart = () => {
 
   const getChartData = () => {
     let activeURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=ACTIVE';
+    let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=NEW';
     let recovURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
     let diedURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=DIED';
     let dates = [];
     let casesActive = [];
+    let casesNew = [];
     let casesDied = [];
     let casesRecov = [];
     const activeReq = axios.get(activeURL);
+    const newReq = axios.get(newURL);
     const recovReq = axios.get(recovURL); 
     const diedReq = axios.get(diedURL);
 
     axios
-    .all([activeReq, recovReq, diedReq])
+    .all([activeReq, newReq, recovReq, diedReq])
     .then(
       axios.spread((...responses) => {
 
@@ -31,12 +34,17 @@ const BarChart = () => {
             dates.push(dataObj.DateRepConf);
             });
      
-        const dataRecov = responses[1];
+          const dataNew = responses[1];
+            dataNew.data.forEach((dataObj) => {
+              casesNew.push(dataObj.new_cases);
+              });
+
+        const dataRecov = responses[2];
           dataRecov.data.forEach((dataObj) => {
             casesRecov.push(dataObj.recoveries);
             });
 
-        const dataDied = responses[2];
+        const dataDied = responses[3];
           dataDied.data.forEach((dataObj) => {
             casesDied.push(dataObj.deaths);
             });
@@ -47,13 +55,19 @@ const BarChart = () => {
             {    
               label: 'Active Cases',
               data: casesActive,
-              backgroundColor: 'rgba(255, 64, 64, 0.7)',
+              backgroundColor: 'rgba(255, 64, 64, 0.5)',
               borderColor: 'white',
             },
             {    
               label: 'Recoveries',
               data: casesRecov,
               backgroundColor: 'rgba(64, 159, 64, 0.7)',
+              borderColor: 'white',
+            },     
+            {    
+              label: 'New Cases',
+              data: casesNew,
+              backgroundColor: 'rgba(255, 215,117, 0.4)',
               borderColor: 'white',
             },
             {    

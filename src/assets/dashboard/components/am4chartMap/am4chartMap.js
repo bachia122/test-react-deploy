@@ -26,13 +26,13 @@ class Am4chartMap extends Component {
     let map = am4core.create("map", am4maps.MapChart);
     map.geodata = am4geodata_phHigh; 
     map.geodataSource.url = 'https://api.maptiler.com/data/ae68c8c7-5a03-4882-a5ce-f52afd8514ff/features.json?key=leLR1VA8lmHQnwK3WZM9'; 
-    map.percentHeight = 100;
+    map.percentHeight = 90;
     map.dy = 10;
     map.projection = new am4maps.projections.Mercator();
     let polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
     polygonSeries.useGeodata = true;
-    map.homeZoomLevel = 1; 
-    map.homeGeoPoint = { latitude: 12.5, longitude: 119.9 }
+    map.homeZoomLevel = 1.2; 
+    //map.homeGeoPoint = { latitude: 12.5, longitude: 119.9 }
     map.zoomControl = new am4maps.ZoomControl();
     map.zoomControl.layout = 'horizontal';
     map.zoomControl.align = 'left';
@@ -54,7 +54,8 @@ class Am4chartMap extends Component {
     map.zoomControl.plusButton.scale = .75;
     map.zoomControl.plusButton.label.scale = .75;
     map.zoomControl.plusButton.dx = 5;
-    map.chartContainer.wheelable = false; 
+    map.gridHeight = 200;
+    //map.chartContainer.wheelable = true; 
     let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
     plusButtonHoverState.properties.fill = am4core.color("#354D84");
     let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");

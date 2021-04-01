@@ -112,8 +112,8 @@ class Dashboard extends React.Component {
 
               <Col lg={6}>
                 <Widget className="bg-transparent" title={<h3 className='card-title'> BED OCCUPANCY  </h3> }>
-                <RadialChart />
-                'BedStats'
+                <BedsStats />
+         
                 </Widget>
               </Col>
             </Row>
