@@ -9,42 +9,34 @@ const BarChart = () => {
 
 
   const getChartData = () => {
-    let activeURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=ACTIVE';
     let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=NEW';
     let recovURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
     let diedURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=DIED';
     let dates = [];
-    let casesActive = [];
     let casesNew = [];
     let casesDied = [];
     let casesRecov = [];
-    const activeReq = axios.get(activeURL);
     const newReq = axios.get(newURL);
     const recovReq = axios.get(recovURL); 
     const diedReq = axios.get(diedURL);
 
     axios
-    .all([activeReq, newReq, recovReq, diedReq])
+    .all([newReq, recovReq, diedReq])
     .then(
       axios.spread((...responses) => {
-
-        const dataActive = responses[0];
-          dataActive.data.forEach((dataObj) => {
-            casesActive.push(dataObj.active_cases);
-            dates.push(dataObj.DateRepConf);
-            });
      
-          const dataNew = responses[1];
+          const dataNew = responses[0];
             dataNew.data.forEach((dataObj) => {
               casesNew.push(dataObj.new_cases);
+              dates.push(dataObj.DateNewCase);
               });
 
-        const dataRecov = responses[2];
+        const dataRecov = responses[1];
           dataRecov.data.forEach((dataObj) => {
             casesRecov.push(dataObj.recoveries);
             });
 
-        const dataDied = responses[3];
+        const dataDied = responses[2];
           dataDied.data.forEach((dataObj) => {
             casesDied.push(dataObj.deaths);
             });
@@ -53,9 +45,9 @@ const BarChart = () => {
           labels: dates,
           datasets: [
             {    
-              label: 'Active Cases',
-              data: casesActive,
-              backgroundColor: 'rgba(255, 64, 64, 0.5)',
+              label: 'Deaths',
+              data: casesDied,
+              backgroundColor: 'rgba(75, 192, 192, 0.9)',
               borderColor: 'white',
             },
             {    
@@ -64,18 +56,13 @@ const BarChart = () => {
               backgroundColor: 'rgba(64, 159, 64, 0.7)',
               borderColor: 'white',
             },     
-            {    
-              label: 'New Cases',
-              data: casesNew,
-              backgroundColor: 'rgba(255, 215,117, 0.4)',
-              borderColor: 'white',
-            },
-            {    
-              label: 'Deaths',
-              data: casesDied,
-              backgroundColor: 'rgba(75, 192, 192, 0.9)',
-              borderColor: 'white',
-            }
+            
+           {    
+            label: 'New Cases',
+            data: casesNew,
+            backgroundColor: 'rgba(255, 64, 64, 0.5)',
+            borderColor: 'white',
+          }
           ]});
       })
     )
@@ -94,8 +81,9 @@ const BarChart = () => {
         options={{
           legend: {
             position: 'top',
+            reverse:true,
             labels: {
-              boxWidth: 20,
+              boxWidth: 10,
               fontStyle: 'bold',
               fontColor: 'rgba(255,255,255,0.8)',
             }
@@ -139,5 +127,6 @@ const BarChart = () => {
     );
 };
  
+  
   
 export default BarChart;
