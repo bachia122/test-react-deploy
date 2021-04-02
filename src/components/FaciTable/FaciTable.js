@@ -171,6 +171,9 @@ class FaciTable extends Component {
       text: 'All', value: 25
     }] 
   };
+
+
+  
     return (
       <div style={{ padding: "20px", color:"white"}}>
 

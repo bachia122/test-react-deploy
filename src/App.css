@@ -73,9 +73,11 @@
 }
 
 .timeseries {
+  display: block;
+  max-width: 100%;
   position: relative; 
   height:25vh; 
-  width:100%;
+
 }
 
 .test-stats {
