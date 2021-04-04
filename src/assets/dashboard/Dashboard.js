@@ -1,17 +1,13 @@
 import React from "react";
-import { Row, Col, Progress, Table, Label, Input } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import Widget from "./components/Widget";
 import Map from "./components/am4chartMap/am4chartMap";
 import BarChart from "../../components/BarChart"
 import Overview from "../../components/Overview"
 import Title from "../../components/Title"
-import TestStats from "../../components/TestingStat"
-import BedsStats from "../../components/BedsStat"
-import PatientStats from "../../components/PatientStat"
-import FaciOccupancy from "../../components/FaciOccupancy"
-import RadialChart from "../../components/RadialChart"
-import AnimateNumber from "react-animated-number";
-import News from "../../components/News"
+import TestingStat from "../../components/Donuts/TestingStat"
+import BedsStats from "../../components/Donuts/BedsStat"
+import PatientStats from "../../components/Donuts/PatientStat"
 import FaciTable from '../../components/FaciTable/FaciTable'
 import s from "./Dashboard.module.scss";
 
@@ -68,77 +64,50 @@ class Dashboard extends React.Component {
                   <Overview />
                 </Widget>
             </Col>
-
-            <Col lg={6}>
+            <Col lg={9}>
               <Widget className="bg-transparent" >
                 <Map />
               </Widget>
             </Col>
-
-            <Col lg={3} >
-              
-              <Widget className={s.col3} title={<h3 className='card-title'> TESTING STATS</h3> } >
-              <TestStats />
-              </Widget>
-            </Col>
-
           </Row>
 
           <Row>
-                 
-              <Widget className="bg-transparent" title={<h3 className='card-title'> TIME SERIES </h3> }>
-        
-                  <BarChart />
-      
-              </Widget>
-     
-
+            <Widget className="bg-transparent" title={<h3 className='card-title'> TIME SERIES </h3> }>
+                <BarChart />
+            </Widget>
           </Row>
-
 
         </Col>
 
-
-
-
         <Col lg={6}>
+
             <Row> 
-
-              <Col lg={6}>
-                <Widget className="bg-transparent" title={<h3 className='card-title'> ADMITTED PATIENTS </h3> } >
-                  <PatientStats />
-                  
-                </Widget>
-              </Col>
-
-              <Col lg={6}>
-                <Widget className="bg-transparent" title={<h3 className='card-title'> BED OCCUPANCY  </h3> }>
-                <BedsStats />
-         
-                </Widget>
-              </Col>
+              <Widget className="bg-transparent" style={{"padding-bottom": "10px"}}>
+                <Col lg={4} >
+                  <h3 className='card-title'> TESTING STATS</h3>
+                  <TestingStat />
+                </Col>
+                <Col lg={4}>
+                  <h3 className='card-title'> ADMITTED PATIENTS </h3>
+                    <PatientStats />
+                </Col>
+                <Col lg={4}>
+                  <h3 className='card-title'> BED OCCUPANCY  </h3> 
+                  <BedsStats />
+                </Col>
+              </Widget>
             </Row>
+
             <Row>
-             
                 <Widget className="bg-transparent" title={<h3 className='card-title'> Testing Facilities </h3> }>
                   <FaciTable />
                 </Widget>
-           
             </Row>
-            <Row>
-             
-                <Widget className="bg-transparent" title={<h3 className='card-title'> NEWS </h3> }>
-                  <News />
-                </Widget>
-           
-            </Row>
-            <footer className={s.contentFooter}>
-                  <a href="mailto:cebucovidtracker@gmail.com" >Report an issue</a>
-                </footer>
-       
-        
+            <div className="text-center">
+                  <a href="mailto:cebucovidtracker@gmail.com">Report an issue</a> &nbsp;
+                  <a href="https://testflask122.herokuapp.com/"> Visit the API </a>
+            </div>
         </Col>
-        
 
       </div>
     );
@@ -148,193 +117,3 @@ class Dashboard extends React.Component {
 export default Dashboard;
 
 
-/*
-<p>
-                Status: <strong>Live</strong>
-              </p>
-              <p>
-                <span className="circle bg-default text-white">
-                  <i className="fa fa-map-marker" />
-                </span>{" "}
-                &nbsp; 146 Countries, 2759 Cities
-              </p>
-              <div className="row progress-stats">
-                <div className="col-md-9 col-12">
-                  <h6 className="name fw-semi-bold">Foreign Visits</h6>
-                  <p className="description deemphasize mb-xs text-white">
-                    Some Cool Text
-                  </p>
-                  <Progress
-                    color="primary"
-                    value="60"
-                    className="bg-subtle-blue progress-xs"
-                  />
-                </div>
-                <div className="col-md-3 col-12 text-center">
-                  <span className="status rounded rounded-lg bg-default text-light">
-                    <small>
-                      <AnimateNumber value={75} />%
-                    </small>
-                  </span>
-                </div>
-              </div>
-              <div className="row progress-stats">
-            
-                <div className="col-md-3 col-12 text-center">
-                  <span className="status rounded rounded-lg bg-default text-light">
-                    <small>
-                      <AnimateNumber value={84} />%
-                    </small>
-                  </span>
-                </div>
-              </div>
-              <div className="row progress-stats">
-                <div className="col-md-9 col-12">
-                  <h6 className="name fw-semi-bold">Sound Frequencies</h6>
-                  <p className="description deemphasize mb-xs text-white">
-                    Average Bitrate
-                  </p>
-                  <Progress
-                    color="success"
-                    value="80"
-                    className="bg-subtle-blue progress-xs"
-                  />
-                </div>
-                <div className="col-md-3 col-12 text-center">
-                  <span className="status rounded rounded-lg bg-default text-light">
-                    <small>
-                      <AnimateNumber value={92} />%
-                    </small>
-                  </span>
-                </div>
-              </div>
-              <h6 className="fw-semi-bold mt">Map Distributions</h6>
-              <p>
-                Tracking: <strong>Active</strong>
-              </p>
-              <p>
-                <span className="circle bg-default text-white">
-                  <i className="fa fa-cog" />
-                </span>
-                &nbsp; 391 elements installed, 84 sets
-              </p>
-              <div className="input-group mt">
-                <input
-                  type="text"
-                  className="form-control bg-custom-dark border-0"
-                  placeholder="Search Map"
-                />
-                <span className="input-group-btn">
-                  <button
-                    type="submit"
-                    className={`btn btn-subtle-blue ${s.searchBtn}`}
-                  >
-                    <i className="fa fa-search text-light" />
-                  </button>
-                </span>
-              </div>
-
-
-
-/*
-
-
-<Col lg={6} xl={4} xs={12}>
-            <Widget title={<h6> USERBASE GROWTH </h6>} close settings>
-              <div className="stats-row">
-                <div className="stat-item">
-                  <h6 className="name">Overall Growth</h6>
-                  <p className="value">76.38%</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">Montly</h6>
-                  <p className="value">10.38%</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">24h</h6>
-                  <p className="value">3.38%</p>
-                </div>
-              </div>
-              <Progress
-                color="success"
-                value="60"
-                className="bg-subtle-blue progress-xs"
-              />
-              <p>
-                <small>
-                  <span className="circle bg-default text-white mr-2">
-                    <i className="fa fa-chevron-up" />
-                  </span>
-                </small>
-                <span className="fw-semi-bold">&nbsp;17% higher</span>
-                &nbsp;than last month
-              </p>
-            </Widget>
-          </Col>
-          <Col lg={6} xl={4} xs={12}>
-            <Widget title={<h6> TRAFFIC VALUES </h6>} close settings>
-              <div className="stats-row">
-                <div className="stat-item">
-                  <h6 className="name">Overall Values</h6>
-                  <p className="value">17 567 318</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">Montly</h6>
-                  <p className="value">55 120</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">24h</h6>
-                  <p className="value">9 695</p>
-                </div>
-              </div>
-              <Progress
-                color="danger"
-                value="60"
-                className="bg-subtle-blue progress-xs"
-              />
-              <p>
-                <small>
-                  <span className="circle bg-default text-white mr-2">
-                    <i className="fa fa-chevron-down" />
-                  </span>
-                </small>
-                <span className="fw-semi-bold">&nbsp;8% lower</span>
-                &nbsp;than last month
-              </p>
-            </Widget>
-          </Col>
-          <Col lg={6} xl={4} xs={12}>
-            <Widget title={<h6> RANDOM VALUES </h6>} close settings>
-              <div className="stats-row">
-                <div className="stat-item">
-                  <h6 className="name fs-sm">Overcome T.</h6>
-                  <p className="value">104.85%</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name fs-sm">Takeoff Angle</h6>
-                  <p className="value">14.29&deg;</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name fs-sm">World Pop.</h6>
-                  <p className="value">7,211M</p>
-                </div>
-              </div>
-              <Progress
-                color="bg-primary"
-                value="60"
-                className="bg-subtle-blue progress-xs"
-              />
-              <p>
-                <small>
-                  <span className="circle bg-default text-white mr-2">
-                    <i className="fa fa-plus" />
-                  </span>
-                </small>
-                <span className="fw-semi-bold">&nbsp;8 734 higher</span>
-                &nbsp;than last month
-              </p>
-            </Widget>
-          </Col>
-
-
-*/

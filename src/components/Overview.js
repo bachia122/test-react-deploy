@@ -18,44 +18,29 @@ function App() {
   };
 
   return (
-  <div className='col1'>
+    <div className='col1' style={{textAlign: 'center'}}>
 
-    
- 
       <div className = 'lead'>
-        <h5>Total Cases</h5> {caseCounts.map(count => <div>{count.total}</div>)}  
+        <h4>Total Cases</h4> {caseCounts.map(count => <div>{count.total}</div>)}  
       </div>
 
-        <div className ='lead'>
-        <h5> Active Cases </h5> 
+      <div className ='lead'>
+        <h4> Active </h4> 
         {caseCounts.map(count => <div className='text-danger'>{count.active}</div>)} 
-        {caseCounts.map(count => <div className='text-danger'>{count.new_today}</div>)} 
+        <div className='text-danger'>+{caseCounts.map(count => <>{count.new_today}</>)} </div>
       </div>
       
       <div className = 'lead'> 
-      <h5> Recoveries </h5>
-      {caseCounts.map(count => <div className='text-success'>{count.recoveries}</div>)} 
-      {caseCounts.map(count => <div className='text-success'>{count.recov_today}</div>)}
+        <h4> Recoveries </h4>
+        {caseCounts.map(count => <div className='text-success'>{count.recoveries}</div>)} 
       </div>
       
       <div className = 'lead'>  
-      <h5> Deaths </h5>
-      {caseCounts.map(count => <div className='text-info'>{count.deaths}</div>)}
-      {caseCounts.map(count => <div className='text-info'>{count.died_today}</div>)} 
+        <h4> Deaths </h4>
+        {caseCounts.map(count => <div className='text-info'>{count.deaths}</div>)}
       </div>
-    
-
- </div>
-
-    
-
-   
-
- 
+    </div> 
   );
-
-
-
 }
 export default App;
 

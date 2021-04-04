@@ -149,7 +149,7 @@ class FaciTable extends Component {
 
   const customTotal = (from, to, size) => (
     <span className="react-bootstrap-table-pagination-total">
-      Showing { from } to { to } of { size } Results
+      &nbsp; Showing { from } to { to } of { size } Results
     </span>
   );
 
@@ -175,10 +175,10 @@ class FaciTable extends Component {
 
   
     return (
-      <div style={{ padding: "20px", color:"white"}}>
+      <div style={{color:"white"}}>
 
         <div className="text-right">
-        <button className="btn btn-primary btn-sm" onClick={this.resetFilters}>Reset Filters</button></div>
+        <div className='text-info' onClick={this.resetFilters}>Reset Filters</div></div>
         <BootstrapTable
           //bootstrap4
           keyField="id"
@@ -191,7 +191,7 @@ class FaciTable extends Component {
           condensed
           //variant="dark"
           bordered={ false }
-          headerClasses = "header-class"
+          //headerClasses = "header-class"
           expandRow = { expandRow }
           remote={{ filter: true }}
           onTableChange={this.onTableChange}

@@ -1,28 +1,8 @@
-
-/*
-
-
-  padding-left: 20px; 
-  padding-right: 20px; 
-
-  min-height: 100vh;
-
-  background-color: #485461;
-  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-*/
 .section{
-
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .Title {
@@ -37,7 +17,6 @@
 
 .tab-list {  border-bottom: 1px solid rgba(204, 204, 204, 0);
   padding-left: 0;
-  
 }
 
 .tab-content{
@@ -68,7 +47,7 @@
   position: relative;
   z-index: 1;
   top: 10px;
-  left: 30px;
+  padding-bottom: 10px;
   margin: 5% 10%;
 }
 
@@ -76,13 +55,14 @@
   display: block;
   max-width: 100%;
   position: relative; 
-  height:25vh; 
-
+  height: 200px; 
 }
 
 .test-stats {
-
   text-align: center;
+}
+.col1 {
+  height: 350px
 }
 
 h1 { 
@@ -104,22 +84,3 @@ h4 {
   color: white !important; 
   font-family: 'Bebas Neue', cursive;
  }
-
-.col1 {
-height: 50vh;
-}
- 
-
-/*
-@media all and (max-width:800px) 
-{
-    .bubble-map, .Title
-    {
-        display: block; 
-        float: none; 
-        width: 100%;
-    }
-}
-
-
-*/

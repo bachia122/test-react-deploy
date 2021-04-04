@@ -224,7 +224,7 @@ table > thead > tr > th {
 /*         Widgets Grid          */
 
 .widget-container {
-  min-height: 30px;
+  min-height: 100px;
 
   .widget:not(.fullscreened) > header {
     cursor: move;

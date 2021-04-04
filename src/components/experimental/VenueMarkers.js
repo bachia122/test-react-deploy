@@ -11,8 +11,10 @@ const VenueMarkers = (props) => {
       position={venue.geometry} 
       icon={VenueLocationIcon}
     >
-      <MarkerPopup data={venue}/>
+    <MarkerPopup data={venue}/>
     </Marker>
-  ));  return <Fragment>{markers}</Fragment>};
+  ));  
+  return <Fragment>{markers}</Fragment>
+};
   
-  export default VenueMarkers;
+export default VenueMarkers;

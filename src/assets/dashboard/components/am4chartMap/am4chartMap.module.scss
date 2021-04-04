@@ -2,9 +2,9 @@
 
 .map {
   position: relative;
-  height: 55vh;
+  height: 400px;
   svg {
-    height: 50vh;
+    height:  400px;
   }
 }
 .stats {
@@ -12,10 +12,15 @@
   z-index: 1;
   top: 0;
   left: 0;
-  margin: 5% 10%;
+  margin: 0% 5%;
 }
+@media (max-width: breakpoint-max(sm)) {
+  .stats{
+    margin: 2% 2%;
+}}
 
 .mapChart {
   position: relative;
-  margin: (-$widget-padding-vertical) (-$widget-padding-horizontal) 0;
+  height: 400px;
+
 }

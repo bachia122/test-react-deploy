@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function News () {
     const [data, setData] = useState([]);
@@ -13,15 +13,14 @@ function News () {
         const data = await response.json();
         setData(data);
     }
-
-
-        return (
-            <div>
-                <ul>{data.map(record => <li><a href={record.link} target='_blank'>{record.title}</a></li>)}
-                </ul>
-            </div>
-        );
-    }
+    
+    return (
+        <div>
+            <ul>{data.map(record => <li><a href={record.link} target='_blank'>{record.title}</a></li>)}
+            </ul>
+        </div>
+    );
+}
 
 
 export default News;
