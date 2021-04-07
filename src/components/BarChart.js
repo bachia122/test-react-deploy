@@ -120,7 +120,7 @@ const BarChart = () => {
               ticks:{
                 fontColor: 'rgba(255,255,255,0.4)',
                 fontFamily: 'Tahoma',
-                maxTicksLimit: 10,
+                maxTicksLimit: 6,
                 maxRotation: 0,
                 minRotation: 0,
               },

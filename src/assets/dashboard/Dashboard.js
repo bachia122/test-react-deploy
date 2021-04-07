@@ -88,7 +88,7 @@ class Dashboard extends React.Component {
                   <TestingStat />
                 </Col>
                 <Col lg={4}>
-                  <h3 className='card-title'> ADMITTED PATIENTS </h3>
+                  <h3 className='card-title'> INPATIENT STATS </h3>
                     <PatientStats />
                 </Col>
                 <Col lg={4}>

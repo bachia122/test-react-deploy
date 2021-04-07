@@ -16,6 +16,7 @@ const TestingStat = () => {
   }; 
 
     const option = {
+      maintainAspectRatio: false,
       legend:{
         display:true,
         position:'right',
