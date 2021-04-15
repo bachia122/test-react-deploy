@@ -43,7 +43,6 @@ class FaciTable extends Component {
 
   const products = () => {
     const { filters } = this.state;
-    console.log("d=>", filters);
     let items = require('./faciData.json');
 
     const testnameFilter = filters.testname ? filters.testname.filterVal : null;

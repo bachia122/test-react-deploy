@@ -30,12 +30,13 @@ const BarChart = () => {
         const dataNew = responses[0];
           dataNew.data.forEach((dataObj) => {
             casesNew.push(dataObj.new_cases);
-            dates.push(dataObj.DateNewCase);
+           
             });
 
         const dataRecov = responses[1];
           dataRecov.data.forEach((dataObj) => {
             casesRecov.push(dataObj.recoveries);
+            dates.push(dataObj.DateRecover);
             });
 
         const dataDied = responses[2];

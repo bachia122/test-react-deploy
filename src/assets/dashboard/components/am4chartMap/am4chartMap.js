@@ -26,11 +26,11 @@ class Am4chartMap extends Component {
 
     map.zoomControl = new am4maps.ZoomControl();
     map.zoomControl.layout = 'horizontal';
-    map.zoomControl.align = 'left';
+    map.zoomControl.align = 'right';
     map.zoomControl.valign = 'bottom';
     map.zoomControl.dy = 10;
-    map.zoomControl.dx = 10;
-    map.zoomControl.contentHeight = 20;
+    map.zoomControl.dx = -20;
+    map.zoomControl.contentHeight = 10;
     map.zoomControl.minusButton.background.fill = am4core.color("rgba(229, 249, 255, 0.74)");
     map.zoomControl.minusButton.background.stroke = am4core.color("#e5f9ff");
     map.zoomControl.minusButton.label.fontWeight = 600;
@@ -45,20 +45,20 @@ class Am4chartMap extends Component {
     map.zoomControl.plusButton.scale = .75;
     map.zoomControl.plusButton.label.scale = .75;
     map.zoomControl.plusButton.dx = 5;
-
+    let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
+    plusButtonHoverState.properties.fill = am4core.color("white");
+    let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
+    minusButtonHoverState.properties.fill = am4core.color("white");
+  
     map.gridHeight = 200;
     //map.chartContainer.wheelable = true; 
-    let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
-    plusButtonHoverState.properties.fill = am4core.color("#354D84");
-    let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
-    minusButtonHoverState.properties.fill = am4core.color("#354D84");
-
+  
     let polygonTemplate = polygonSeries.mapPolygons.template;
     //polygonTemplate.tooltipText = "{name}"; 
     polygonTemplate.fill = am4core.color("rgba(79, 171, 167, 0.21)"); // fill 
     polygonTemplate.stroke = am4core.color("rgba(244, 244, 245, 0.2)") // borders
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("rgba(12, 49, 47, 0.92))"); // fill on hover
+    hs.properties.fill = am4core.color("rgba(12, 49, 47, 0.92)"); // fill on hover
 
     let citySeries = map.series.push(new am4maps.MapImageSeries());
     citySeries.data = cities;

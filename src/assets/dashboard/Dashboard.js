@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
         <Col lg={6}>
 
             <Row> 
-              <Widget className="bg-transparent" style={{"padding-bottom": "10px"}}>
+              <Widget className="bg-transparent" >
                 <Col lg={4} >
                   <h3 className='card-title'> TESTING STATS</h3>
                   <TestingStat />
