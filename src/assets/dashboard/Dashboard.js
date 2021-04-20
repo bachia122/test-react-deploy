@@ -84,11 +84,11 @@ class Dashboard extends React.Component {
             <Row> 
               <Widget className="bg-transparent" >
                 <Col lg={4} >
-                  <h3 className='card-title'> TESTING STATS</h3>
+                  <h3 className='card-title'> TESTING</h3>
                   <TestingStat />
                 </Col>
                 <Col lg={4}>
-                  <h3 className='card-title'> INPATIENT STATS </h3>
+                  <h3 className='card-title'> INPATIENTS </h3>
                     <PatientStats />
                 </Col>
                 <Col lg={4}>
