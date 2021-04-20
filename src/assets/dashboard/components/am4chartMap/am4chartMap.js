@@ -8,7 +8,7 @@ import s from './am4chartMap.module.scss';
 class Am4chartMap extends Component {
 
   async componentDidMount() {    
-    const Url = 'https://testflask122.herokuapp.com/api/cases/casebycitymun';
+    const Url = 'https://cebu-covid-api.herokuapp.com/api/cases/casebycitymun';
     const response = await fetch(Url);
     const cities = await response.json();
     console.log(cities);

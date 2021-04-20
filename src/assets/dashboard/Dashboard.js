@@ -105,7 +105,7 @@ class Dashboard extends React.Component {
             </Row>
             <div className="text-center">
                   <a href="mailto:cebucovidtracker@gmail.com">Report an issue</a> &nbsp;
-                  <a href="https://testflask122.herokuapp.com/"> Visit the API </a>
+                  <a href="https://cebu-covid-api.herokuapp.com/"> Visit the API </a>
             </div>
         </Col>
 

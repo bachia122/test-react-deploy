@@ -7,7 +7,7 @@ const TestingStat = () => {
   const [data, setData] = useState([]);
 
   async function getData () {
-    const response = await fetch('https://testflask122.herokuapp.com/api/tests/testoverview');
+    const response = await fetch('https://cebu-covid-api.herokuapp.com/api/tests/testoverview');
     const json = await response.json();     
     const data = []
     data.push(json[2].total_pos)

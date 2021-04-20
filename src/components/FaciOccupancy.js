@@ -12,7 +12,7 @@ function FaciOccupancy() {
   }, []);
 
   async function getData () {
-    const response = await fetch('https://testflask122.herokuapp.com/api/beds/crit_faci');
+    const response = await fetch('https://cebu-covid-api.herokuapp.com/api/beds/crit_faci');
     const json = await response.json();
     setData(json);
   };

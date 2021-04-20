@@ -7,7 +7,7 @@ const PatientStat = () => {
   const [data, setData] = useState([]);
 
   async function getData () {
-    const response = await fetch('https://testflask122.herokuapp.com/api/cases/symptoms');
+    const response = await fetch('https://cebu-covid-api.herokuapp.com/api/cases/symptoms');
     const json = await response.json();     
     const data = []
     data.push(json[1].num_asym)

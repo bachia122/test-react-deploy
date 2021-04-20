@@ -8,7 +8,7 @@ function News () {
     }, []);
 
     async function getData () {
-        const Url = 'https://testflask122.herokuapp.com/api/news';
+        const Url = 'https://cebu-covid-api.herokuapp.com/api/news';
         const response = await fetch(Url);
         const data = await response.json();
         setData(data);

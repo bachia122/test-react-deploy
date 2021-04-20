@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+//import AnimatedNumber from 'react-animated-number';
 import '../App.css'
 
-const Url = "https://testflask122.herokuapp.com/api/cases/totals";
+const Url = "https://cebu-covid-api.herokuapp.com/api/cases/totals";
 
 function App() {
   const [caseCounts, setCaseCounts] = useState([]);
@@ -21,7 +22,9 @@ function App() {
     <div className='col1' style={{textAlign: 'center'}}>
 
       <div className = 'lead'>
-        <h4>Total Cases</h4> {caseCounts.map(count => <div>{count.total}</div>)}  
+        <h4>Total Cases</h4> 
+        
+        {caseCounts.map(count => <div>{count.total}</div>)}  
       </div>
 
       <div className ='lead'>

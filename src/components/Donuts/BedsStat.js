@@ -8,7 +8,7 @@ const BedsStats = () => {
   const [data2, setData2] = useState([]);
 
   async function getData () {
-    const response = await fetch('https://testflask122.herokuapp.com/api/beds/bedoverview');
+    const response = await fetch('https://cebu-covid-api.herokuapp.com/api/beds/bedoverview');
     const json = await response.json();     
     const data1 = []
     const data2 = []

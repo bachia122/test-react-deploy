@@ -8,10 +8,10 @@ const BarChart = () => {
   const [chartData, setChartData] = useState([]);
 
   const getChartData = () => {
-    let newURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=NEW';
-    let recovURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=RECOV';
-    let diedURL = 'https://testflask122.herokuapp.com/api/cases/charts?status=DIED';
-    let aveNewURL = 'https://testflask122.herokuapp.com/api/cases/charts/average';
+    let newURL = 'https://cebu-covid-api.herokuapp.com/api/cases/charts?status=NEW';
+    let recovURL = 'https://cebu-covid-api.herokuapp.com/api/cases/charts?status=RECOV';
+    let diedURL = 'https://cebu-covid-api.herokuapp.com/api/cases/charts?status=DIED';
+    let aveNewURL = 'https://cebu-covid-api.herokuapp.com/api/cases/charts/average';
     let dates = [];
     let casesNew = [];
     let casesDied = [];

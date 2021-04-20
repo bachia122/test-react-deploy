@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 
-const Url = "https://testflask122.herokuapp.com/api/dates";
+const Url = "https://cebu-covid-api.herokuapp.com/api/dates";
 
 function Title() {
 
